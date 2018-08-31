@@ -1,9 +1,10 @@
 read -p "Enter Directory:" direc
 cd $direc
-read -p "Enter User Name:" user
-read -p "Enter Password:" pass
-read -p "Enter DB:" db
+read -p "Enter DB User Name:" user
+read -p "Enter DB Password:" pass
+read -p "Enter DB Name:" db
 mysqldump -u $user --password=$pass $db > "$user.sql"
+echo("Database Back created: $User.sql ")
 git init
 git add .
 git commit -m "all files"
